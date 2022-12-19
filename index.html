@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Twitter Username Checker</title>
+  <style>
+    body {
+      font-family: sans-serif;
+    }
+    form {
+      width: 400px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    input[type="text"] {
+      width: 60%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    input[type="submit"] {
+      width: 20%;
+      background-color: #4CAF50;
+      color: white;
+      padding: 14px 20px;
+      margin: 8px 0;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    input[type="submit"]:hover {
+      background-color: #45a049;
+    }
+    .results {
+      margin-top: 16px;
+      text-align: left;
+    }
+  </style>
+</head>
+<body>
+  <h1>Twitter Username Checker</h1>
+  <form id="form">
+    <label for="username">Enter a username:</label><br>
+    <input type="text" id="username" name="username"><br>
+    <input type="submit" value="Check">
+  </form>
+  <div class="results"></div>
+  <script>
+    // Add an event listener to the form's submit event
+    document.getElementById("form").addEventListener("submit", function(event) {
+      event.preventDefault();  // Prevent the form from being submitted
+
+      // Get the username from the form
+      var username = document.getElementById("username").value;
+
+      // Use the Fetch API to send a request to the Python script
+      fetch(`check_username.py?username=${username}`)
+        .then(response => response.text())  // Parse the response as text
+        .then(result => {
+          // Update the page with the result
+          document.querySelector(".results").innerHTML = result;
+        });
+    });
+  </script>
+</body>
+</html>
