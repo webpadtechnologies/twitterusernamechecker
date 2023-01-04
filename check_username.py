@@ -3,8 +3,8 @@ import json
 
 # Replace YOUR_CONSUMER_KEY and YOUR_CONSUMER_SECRET with your Twitter API
 # consumer key and secret, respectively
-consumer_key = "BRai9sz3p6bTcqgKowW2YYaFn"
-consumer_secret = "F5MDKIWgjgBhN4UEqnMEG01mfo95J8sNKyTUaDtVy5NlfbkUHo"
+consumer_key = "3KiS2w8prnFWS0BJLc8wnbCii"
+consumer_secret = "dIgFmXN2bRqnoaMuEJXtylACAvA1YSkCrbsZEaU3Q3AWEt6Pcr"
 
 # Use the requests library to send a request to the Twitter API to retrieve an
 # access token
@@ -15,10 +15,10 @@ response = requests.post(
 )
 
 # Extract the access token from the response
-access_token = response.json()["AAAAAAAAAAAAAAAAAAAAACxMkgEAAAAAovUYIgSrZ%2BwuEdF%2Fe%2BJnXywYnuM%3DitPR7vr5DvnjPlEKToqyBrQ2V5tAyeiHElxqrQzGaJQX5vFpp3"]
+access_token = response.json()["1366625424302743552-BxbYR5npKJKsDKcKBkGUD26Vi64a8V"]
 
 # Use the access token to authenticate requests to the Twitter API
-auth_header = f"Bearer {AAAAAAAAAAAAAAAAAAAAACxMkgEAAAAAovUYIgSrZ%2BwuEdF%2Fe%2BJnXywYnuM%3DitPR7vr5DvnjPlEKToqyBrQ2V5tAyeiHElxqrQzGaJQX5vFpp3}"
+auth_header = f"Bearer AAAAAAAAAAAAAAAAAAAAAA32kwEAAAAAx1IINmWEdgkFwgnaQ%2B6cJOMPHKU%3DbooHynMG6i3XXK8ngGlvC8o3EfU0WdGYQw4aTRBfKohk6voFC9"
 
 # Use the requests library to send a request to the Twitter API to check if a
 # username is available
